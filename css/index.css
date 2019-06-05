@@ -105,7 +105,7 @@ section {
   display: block;
 }
 body {
-  line-height: 1.1;
+  line-height: 1.2;
 }
 ol,
 ul {
@@ -137,7 +137,7 @@ body {
 .content-flexbox {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .text-flexbox {
   display: flex;
@@ -147,7 +147,7 @@ body {
 .header-display {
   font-size: 1.2rem;
   font-weight: bold;
-  padding: 1.5rem 0;
+  padding: 1.1rem 0;
 }
 .container {
   width: 800px;
@@ -173,13 +173,16 @@ body {
   color: DarkOliveGreen;
   text-decoration: none;
 }
+.container header nav a:hover {
+  font-weight: bold;
+}
 .container .main {
   width: 100%;
 }
 .container .main .top-content {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 20px 0;
 }
 @media (max-width: 500px) {
@@ -192,7 +195,6 @@ body {
 }
 .container .main .top-content .bio-image {
   width: 45%;
-  margin: auto;
 }
 @media (max-width: 500px) {
   .container .main .top-content .bio-image {
@@ -216,7 +218,7 @@ body {
 }
 .container .main .top-content .text-content h1 {
   font-size: 3rem;
-  margin: 15px 20px 15px 0;
+  margin: 0 20px 15px 0;
   color: Chocolate;
 }
 .container .main .top-content .text-content p {
@@ -225,13 +227,13 @@ body {
 .container .main .bottom-content {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 20px 0;
 }
 @media (max-width: 500px) {
   .container .main .bottom-content {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     width: 100%
 				margin: 0 auto;
   }
@@ -251,7 +253,7 @@ body {
 .container .main .bottom-content .text-content h2 {
   font-size: 1.2rem;
   font-weight: bold;
-  padding: 1.5rem 0;
+  padding: 1.1rem 0;
   color: DarkOliveGreen;
 }
 .container .main .bottom-content .text-content p {
@@ -269,7 +271,7 @@ body {
 .container .main .bottom-content .list h3 {
   font-size: 1.2rem;
   font-weight: bold;
-  padding: 1.5rem 0;
+  padding: 1.1rem 0;
   color: DarkOliveGreen;
 }
 .container .main .bottom-content .list ul {
@@ -287,7 +289,7 @@ body {
 .container footer .contact h4 {
   font-size: 1.2rem;
   font-weight: bold;
-  padding: 1.5rem 0;
+  padding: 1.1rem 0;
 }
 .container footer .contact p {
   margin: 5px 0;

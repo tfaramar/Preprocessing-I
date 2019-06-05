@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1.1;
+	line-height: 1.2;
 }
 ol, ul {
 	list-style: none;
@@ -66,7 +66,7 @@ html, body {
 .content-flexbox{
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 
 .text-flexbox{
@@ -78,7 +78,7 @@ html, body {
 .header-display{
 	font-size: 1.2rem;
 	font-weight: bold;
-	padding: 1.5rem 0;
+	padding: 1.1rem 0;
 }
 
 //Styling below//
@@ -107,6 +107,10 @@ html, body {
 				text-decoration: none;
 			}
 
+			a:hover {
+				font-weight: bold;
+			}
+
 		}
 	}
 
@@ -126,7 +130,6 @@ html, body {
 
 			.bio-image {
 				width: 45%;
-				margin: auto;
 
 				@media(max-width: 500px){
 					width: 100%
@@ -148,7 +151,7 @@ html, body {
 
 				h1 {
 					font-size: 3rem;
-					margin: 15px 20px 15px 0;
+					margin: 0 20px 15px 0;
 					color: Chocolate;
 				}
 
@@ -165,7 +168,7 @@ html, body {
 
 			@media(max-width: 500px){
 				flex-direction: column;
-				align-items: center;
+				align-items: flex-start;
 				width: 100%
 				margin: 0 auto;
 			}

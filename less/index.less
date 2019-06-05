@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,12 +25,12 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 1.2;
 }
 ol, ul {
 	list-style: none;
@@ -57,3 +57,178 @@ html, body {
     height: 100%;
 }
 
+// Variables and Mixins here //
+
+@hColor: DarkOliveGreen;
+
+@textColor: DimGray;
+
+.content-flexbox{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+.text-flexbox{
+	display: flex;
+	flex-direction: column;
+	align-content: space-around;
+}
+
+.header-display{
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding: 1.1rem 0;
+}
+
+//Styling below//
+
+.container {
+	width: 800px;
+	margin: 40px auto;
+
+	@media(max-width: 500px){
+		width: 100%;
+		padding: 10px;
+	}
+
+	header {
+		width: 100%;
+		padding: 40px 0;
+
+		nav {
+			width: 50%;
+			margin: auto;
+			display: flex;
+			justify-content: space-between;
+
+			a {
+				color: @hColor;
+				text-decoration: none;
+			}
+
+			a:hover {
+				font-weight: bold;
+			}
+
+		}
+	}
+
+	.main {
+		width: 100%;
+
+		.top-content {
+			.content-flexbox();
+			padding: 20px 0;
+
+			@media(max-width: 500px){
+				flex-direction: column;
+				align-items: center;
+				width: 100%
+				margin: 0 auto;
+			}
+
+			.bio-image {
+				width: 45%;
+
+				@media(max-width: 500px){
+					width: 100%
+				}
+
+				img {
+					width: 100%;
+				}
+			}
+
+			.text-content {
+				width: 45%;
+				margin: 20px 0;
+				.text-flexbox();
+
+				@media(max-width: 500px){
+					width: 100%
+				}
+
+				h1 {
+					font-size: 3rem;
+					margin: 0 20px 15px 0;
+					color: Chocolate;
+				}
+
+				p {
+					color: @textColor;
+				}
+			}
+
+		}
+
+		.bottom-content {
+			.content-flexbox();
+			padding: 20px 0;
+
+			@media(max-width: 500px){
+				flex-direction: column;
+				align-items: flex-start;
+				width: 100%
+				margin: 0 auto;
+			}
+
+			.text-content {
+				width: 45%;
+				margin: 20px 0;
+				.text-flexbox();
+
+				@media(max-width: 500px){
+					width: 100%
+				}
+
+				h2 {
+					.header-display();
+					color: @hColor;
+				}
+
+				p {
+					color: @textColor;
+				}
+			}
+
+			.list {
+				width: 45%;
+				margin: 20px 0;
+
+				@media(max-width: 500px){
+					width: 100%
+				}
+
+				h3 {
+					.header-display();
+					color: @hColor;
+				}
+
+				ul {
+					color: @textColor;
+					list-style-type: circle;
+					list-style-position: inside;
+				}
+			}
+		}
+	}
+
+	footer {
+		width: 100%;
+
+		.contact {
+			color: @hColor;
+			padding: 40px 0;
+
+			h4 {
+				.header-display();
+			}
+
+			p {
+				margin: 5px 0;
+			}
+		}
+	}
+
+}

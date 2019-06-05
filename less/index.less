@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 1.1;
 }
 ol, ul {
 	list-style: none;
@@ -55,4 +55,177 @@ table {
 
 html, body {
     height: 100%;
+}
+
+// Variables and Mixins here //
+
+@hColor: DarkOliveGreen;
+
+@textColor: DimGray;
+
+.content-flexbox{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+
+.text-flexbox{
+	display: flex;
+	flex-direction: column;
+	align-content: space-around;
+}
+
+.header-display{
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding: 1.5rem 0;
+}
+
+//Styling below//
+
+.container {
+	width: 800px;
+	margin: 40px auto;
+
+	@media(max-width: 500px){
+		width: 100%;
+		padding: 10px;
+	}
+
+	header {
+		width: 100%;
+		padding: 40px 0;
+
+		nav {
+			width: 50%;
+			margin: auto;
+			display: flex;
+			justify-content: space-between;
+
+			a {
+				color: @hColor;
+				text-decoration: none;
+			}
+
+		}
+	}
+
+	.main {
+		width: 100%;
+
+		.top-content {
+			.content-flexbox();
+			padding: 20px 0;
+
+			@media(max-width: 500px){
+				flex-direction: column;
+				align-items: center;
+				width: 100%
+				margin: 0 auto;
+			}
+
+			.bio-image {
+				width: 45%;
+				margin: auto;
+
+				@media(max-width: 500px){
+					width: 100%
+				}
+
+				img {
+					width: 100%;
+				}
+			}
+
+			.text-content {
+				width: 45%;
+				margin: 20px 0;
+				.text-flexbox();
+
+				@media(max-width: 500px){
+					width: 100%
+				}
+
+				h1 {
+					font-size: 3rem;
+					margin: 15px 20px 15px 0;
+					color: Chocolate;
+				}
+
+				p {
+					color: @textColor;
+				}
+			}
+
+		}
+
+		.bottom-content {
+			.content-flexbox();
+			padding: 20px 0;
+
+			@media(max-width: 500px){
+				flex-direction: column;
+				align-items: center;
+				width: 100%
+				margin: 0 auto;
+			}
+
+			.text-content {
+				width: 45%;
+				margin: 20px 0;
+				.text-flexbox();
+
+				@media(max-width: 500px){
+					width: 100%
+				}
+
+				h2 {
+					.header-display();
+					color: @hColor;
+				}
+
+				p {
+					color: @textColor;
+				}
+			}
+
+			.list {
+				width: 45%;
+				margin: 20px 0;
+
+				@media(max-width: 500px){
+					width: 100%
+				}
+
+				h3 {
+					.header-display();
+					color: @hColor;
+				}
+
+				ul {
+					color: @textColor;
+					list-style-type: circle;
+					list-style-position: inside;
+				}
+			}
+		}
+	}
+
+	footer {
+		width: 100%;
+
+		.contact {
+			color: @hColor;
+			padding: 40px 0;
+
+			h4 {
+				.header-display();
+			}
+
+			p {
+				margin: 5px 0;
+			}
+		}
+	}
+
 }
